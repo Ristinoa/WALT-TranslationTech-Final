@@ -3,10 +3,10 @@ import re
 INPUT_FILE = "de_script.rpy"
 OUTPUT_FILE = "extracted_comments.txt"
 
-# Pattern to detect the reference line
+# Regex pattern to detect the reference line
 ref_pattern = re.compile(r'#\s*game/script\.rpy:\s*(\d+)')
 
-# Pattern to extract quoted text inside comment lines
+# Regex Pattern to extract quoted text inside quoted comments
 quoted_pattern = re.compile(r'"(.*?)"')
 
 def main():
@@ -32,7 +32,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
         out.write("\n".join(results))
 
-    print(f"Done! Extracted {len(results)} comment strings to {OUTPUT_FILE}")
+    print(f"Extracted {len(results)} comment strings to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
