@@ -4,7 +4,7 @@ import io
 import sys
 
 ORIGINAL_FILE = "script.rpy"
-TRANSLATION_FILE = "extracted_comments_ZH.txt"
+TRANSLATION_FILE = "extracted_comments_JA.txt"
 OUTPUT_FILE = "script_translated.rpy"
 
 # Load translations keyed by numeric reference (e.g. 29 -> Chinese text)
@@ -14,7 +14,7 @@ translation_line_re = re.compile(r'^(\d+)\s+"(.*)"\s*$')
 reference_re = re.compile(r'#\s*game/script\.rpy:(\d+)\b')
 
 # Detect the translate chinese strings: block header
-strings_block_start = re.compile(r'^\s*translate\s+chinese\s+strings\s*:\s*$', re.IGNORECASE)
+strings_block_start = re.compile(r'^\s*translate\s+japanese\s+strings\s*:\s*$', re.IGNORECASE)
 
 # Detect an old "..." line (for strings block)
 old_line_re = re.compile(r'^(\s*old\s*")(?P<content>.*?)(\".*)$')
