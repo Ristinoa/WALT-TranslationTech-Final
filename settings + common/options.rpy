@@ -3,6 +3,6 @@
 translate spanish strings:
 
     # game/options.rpy:15
-    old "test 3"
+    old "The Last House"
     new ""
 

@@ -1,7 +1,7 @@
 import re
 
-INPUT_FILE = "extracted_translated.txt"
-OUTPUT_FILE = "extracted_translated_cleaned.txt"
+INPUT_FILE = "options_extracted_ZH.txt"
+OUTPUT_FILE = "options_extracted_ZH.txt"
 
 # Matches: line starting with a number, then space, then anything
 line_pattern = re.compile(r'^(\d+)\s+(.*)$')
