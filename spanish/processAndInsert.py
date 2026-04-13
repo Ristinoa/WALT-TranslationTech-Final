@@ -2,7 +2,6 @@
 import re
 import io
 import sys
-import os
 
 # ! This file is configured to work only on SPANISH files
 

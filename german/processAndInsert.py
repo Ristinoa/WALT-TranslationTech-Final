@@ -290,7 +290,7 @@ if __name__ == "__main__":
     outputs = ["script_translated_final_DE.rpy", "common_translated_final_DE.rpy", "screens_translated_final_DE.rpy"]
 
     for i in range(len(original_files)):
-        ORIG = original_files
+        ORIG = original_files[i]
         TRANS_IN = translation_files[i]
         TRANS_OUT = processed_files[i]
         OUTPUT = outputs[i]

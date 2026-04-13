@@ -28,19 +28,19 @@ def extract(INPUT_FILE, OUTPUT_FILE):
                     continue
 
                 # Find reference line
-                ref_match = re.search(r'#\s*game/.*\.rpy:\s*(\d+)', line)
+                ref_match = re.search(r'#\s*(?:game|renpy)/.*\.rpy:\s*(\d+)', line)
                 if ref_match:
                     current_ref = ref_match.group(1)
                     continue
 
-                # Extract old string
-                old_match = re.match(r'^\s*old\s*"(.+?)"', line)
+                # Extract old string, including escaped quotes inside the string
+                old_match = re.match(r'^\s*old\s+"((?:[^"\\]|\\.)*)"', line)
                 if old_match and current_ref:
                     results.append(f'{current_ref} "{old_match.group(1)}"')
                 continue
 
             # Outside translate block (normal comment extraction)
-            ref_match = re.search(r'#\s*game/.*\.rpy:\s*(\d+)', line)
+            ref_match = re.search(r'#\s*(?:game|renpy)/.*\.rpy:\s*(\d+)', line)
             if ref_match:
                 current_ref = ref_match.group(1)
                 continue

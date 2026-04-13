@@ -22,7 +22,6 @@ strings_block_start = re.compile(
     r'^\s*translate\s+chinese\s+strings\s*:\s*$',
     re.IGNORECASE
 )
-
 # Pattern for formatting translation input lines
 line_pattern = re.compile(r'^(\d+)\s+(.*)$')
 
